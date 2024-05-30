@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class GameLogic : MonoBehaviour
@@ -11,6 +12,43 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private FireballMove fireballMove;
     [SerializeField] private GameObject windowHelp;
     [SerializeField] private GameObject windowOptions;
+    [SerializeField] private Text textTurn;
+    private GameAI gameAI;
+
+    private void DebugScanPosition()//для перевірки карти
+    {
+        for(int z=0;z<3;z++)
+        {
+            Debug.Log("ScanPosition: " + z);
+            for (int y = 0; y < 8; y++)
+            {
+                string str = "| ";
+                for (int x = 0; x < 12; x++)
+                {
+                    str += GameInfo.map[z, x, 7-y].GetName() + " | ";
+                }
+                Debug.Log(str);
+            }
+            
+        }
+    }
+    public void ButtonAI()
+    {
+        Debug.Log("--- Run AI  ---");
+        gameAI = new GameAI(GameInfo.map,GameInfo.flag);
+        GameInfo.save = gameAI.RunAI();
+        NextTurn();
+        Debug.Log("GameInfo.save:" + GameInfo.save.figura.GetColor() + GameInfo.save.figura.GetName() + " >>> " + 
+            GameInfo.save.up.x+" "+ GameInfo.save.up.y + " " + GameInfo.save.up.z +" - " + 
+            GameInfo.save.down.x + " " + GameInfo.save.down.y + " " + GameInfo.save.down.z);
+
+        GameInfo.save.up.z += 1;
+        GameInfo.save.down.z += 1;
+
+        RunFigur();
+        //DebugScanPosition();
+        Debug.Log("---Finish AI---");
+    }
     public void ButtonHelp()
     {
         if(windowHelp.active==false && GameInfo.activeUI == false)
@@ -357,6 +395,22 @@ public class GameLogic : MonoBehaviour
         mapController.CreateMap();          //створення дошок
         StartPosition();                    //розстановка на стартові позиції
         mapController.CreateUnitsModel();   //створення моделей
+    }
+    public void NextTurn()
+    {
+        GameInfo.flag *= -1;
+        if(GameInfo.flag>0)
+        {
+            textTurn.text = "Хід Білих";
+        }
+        else if (GameInfo.flag < 0)
+        {
+            textTurn.text = "Хід Чорних";
+        }
+        else
+        {
+            textTurn.text = "Хід ...";
+        }
     }
     private void StartPosition()
     {

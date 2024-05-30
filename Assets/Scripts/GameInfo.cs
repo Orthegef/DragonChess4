@@ -100,8 +100,7 @@ public class SaveFigure//експерементальний
     public Figura figura = new Figura();
 }
 
-
-public class WhiteAngel : Figura
+public class WhiteAngel : Figura    //Янгол
 {
     public WhiteAngel()
     {
@@ -132,7 +131,7 @@ public class WhiteAngel : Figura
         };
     }
 }
-public class WhiteBasilisk : Figura
+public class WhiteBasilisk : Figura //Василіск
 {
     public WhiteBasilisk()
     {
@@ -156,7 +155,7 @@ public class WhiteBasilisk : Figura
         };
     }
 }
-public class WhiteBowman : Figura
+public class WhiteBowman : Figura   //Лучник
 {
     public WhiteBowman()
     {
@@ -172,7 +171,7 @@ public class WhiteBowman : Figura
         };
     }
 }
-public class WhiteCavalry : Figura
+public class WhiteCavalry : Figura  //Кавалерист
 {
     public WhiteCavalry()
     {
@@ -264,7 +263,7 @@ public class WhiteCavalry : Figura
         };
     }
 }
-public class WhiteDragon : Figura
+public class WhiteDragon : Figura   //Дракон
 {
     public WhiteDragon()
     {
@@ -295,7 +294,7 @@ public class WhiteDragon : Figura
         };
     }
 }
-public class WhiteElemental : Figura
+public class WhiteElemental : Figura    //Елементаль
 {
     public WhiteElemental()
     {
@@ -344,7 +343,7 @@ public class WhiteElemental : Figura
         };
     }
 }
-public class WhiteGhost : Figura
+public class WhiteGhost : Figura    //Привид
 {
     public WhiteGhost()
     {
@@ -437,7 +436,7 @@ public class WhiteGhost : Figura
         };
     }
 }
-public class WhiteGiant : Figura
+public class WhiteGiant : Figura    //Велетень
 {
     public WhiteGiant()
     {
@@ -453,7 +452,7 @@ public class WhiteGiant : Figura
         };
     }
 }
-public class WhiteGriffin : Figura
+public class WhiteGriffin : Figura  //Грифон
 {
     public WhiteGriffin()
     {
@@ -496,7 +495,7 @@ public class WhiteGriffin : Figura
         };
     }
 }
-public class WhiteHero : Figura
+public class WhiteHero : Figura //Герой
 {
     public WhiteHero()
     {
@@ -549,7 +548,7 @@ public class WhiteHero : Figura
         };
     }
 }
-public class WhiteSpearman : Figura
+public class WhiteSpearman : Figura //Піхотинець
 {
     public WhiteSpearman()
     {
@@ -572,7 +571,7 @@ public class WhiteSpearman : Figura
         };
     }
 }
-public class WhiteSpider : Figura
+public class WhiteSpider : Figura   //Павук
 {
     public WhiteSpider()
     {
@@ -605,7 +604,7 @@ public class WhiteSpider : Figura
         };
     }
 }
-public class WhiteStandardBearer : Figura
+public class WhiteStandardBearer : Figura   //Король
 {
     public WhiteStandardBearer()
     {
@@ -646,7 +645,7 @@ public class WhiteStandardBearer : Figura
         };
     }
 }
-public class WhiteUnicorn : Figura
+public class WhiteUnicorn : Figura  //Єдиноріг
 {
     public WhiteUnicorn()
     {
@@ -671,7 +670,7 @@ public class WhiteUnicorn : Figura
         };
     }
 }
-public class WhiteWizard : Figura
+public class WhiteWizard : Figura   //Чарівник
 {
     public WhiteWizard()
     {

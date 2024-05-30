@@ -30,25 +30,13 @@ public class NodeController : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1) && GameInfo.activeUI==false)//права кнопка миші
         {
-            //material.material = nodeX;
-
             gameLogic.SaveDown(position.x, position.y, position.z);
             gameLogic.RunFigur();
-            //gameLogic.MoveUnit(GameInfo.mapID[GameInfo.save.up.z-1, GameInfo.save.up.x, GameInfo.save.up.y]);
-
-            //if(GameInfo.mapID[GameInfo.save.down.z - 1, GameInfo.save.down.x, GameInfo.save.down.y]!=-1)
-            //{
-            //    gameLogic.DestroyUnit(GameInfo.mapID[GameInfo.save.down.z - 1, GameInfo.save.down.x, GameInfo.save.down.y]);
-            //}
-            //GameInfo.mapID[GameInfo.save.down.z - 1, GameInfo.save.down.x, GameInfo.save.down.y] = GameInfo.mapID[GameInfo.save.up.z - 1, GameInfo.save.up.x, GameInfo.save.up.y];
-            //GameInfo.mapID[GameInfo.save.up.z - 1, GameInfo.save.up.x, GameInfo.save.up.y] = -1;
-
-            //GameInfo.map[GameInfo.save.down.z - 1, GameInfo.save.down.x, GameInfo.save.down.y] = GameInfo.save.figura;
-            //GameInfo.save.figura = new Figura();
-            //GameInfo.map[GameInfo.save.up.z - 1, GameInfo.save.up.x, GameInfo.save.up.y] = new Figura();
 
             gameLogic.NodeNull();
             gameLogic.UpdateAllNode();
+
+            gameLogic.NextTurn();
         }
         if (Input.GetMouseButtonDown(0) && GameInfo.activeUI == false)//ліва кнопка миші
         {
